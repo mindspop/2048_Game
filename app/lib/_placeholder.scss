@@ -1,0 +1,23 @@
+%icon-font {
+    &::before {
+        display: inline-block;
+        font-family: 'iconfont';
+        font-style: normal;
+        font-weight: normal;
+        vertical-align: middle;
+    }
+}
+
+// @todo clearfix
+%clearfix {
+    &::before,&::after{
+	    content: " ";
+	    display: table;
+    }
+	&::after{
+	    clear: both;
+	}    
+}
+
+// @todo icon
+
