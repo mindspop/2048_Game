@@ -1,7 +1,3 @@
-/**
- * Created by mindspop on 5/1/15.
- */
-
 var path = require('path');
 var webpack = require('webpack');
 
