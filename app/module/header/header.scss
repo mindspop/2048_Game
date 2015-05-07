@@ -1,0 +1,63 @@
+@import "../../lib/placeholder";
+
+.header {
+  width   : 600px;
+  padding : 0 20px;
+  margin  : 0 auto;
+  @extend %clearfix;
+  .pull-left {
+    float : left;
+  }
+  .title {
+    font-size   : 50px;
+    font-weight : bold;
+    color       : #776e65;
+    margin-top  : 40px;
+  }
+  .pull-right {
+    float      : right;
+    margin-top : 20px;
+    text-align : right;
+  }
+  .score-count {
+    .score {
+      width            : 200px;
+      height           : 80px;
+      padding          : 10px 0;
+      margin-top       : 18px;
+      font-size        : 30px;
+      color            : #eee4da;
+      background-color : #bbada0;
+      border-radius    : 8px;
+      text-align       : center;
+    }
+    .score-num {
+      display   : block;
+      color     : #f9f6f2;
+      font-size : 40px;
+    }
+    .score-highest {
+      @extend .score-num;
+    }
+  }
+  .start-btn {
+    width            : 150px;
+    height           : 100px;
+    line-height      : 100px;
+    vertical-align   : middle;
+    padding          : 0 10px;
+    margin           : 20px 0;
+    border           : none;
+    border-radius    : 6px;
+    background-color : #948577;
+    color            : #f9f6f2;
+    font-size        : 30px;
+    outline          : none;
+  }
+  .role-btn {
+    display     : inline-block;
+    @extend .start-btn;
+    margin-left : 20px;
+    text-align  : center;
+  }
+}

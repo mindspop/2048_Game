@@ -2,78 +2,17 @@
 <html>
 <head>
     <title>当上CEO迎娶白富美游戏</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="keywords" content="2048,游戏,白富美,CEO,改编"/>
+    <meta name="description" content="这是一款根据 2048 游戏改编的益智类游戏，分 IT 民工、建筑师和打酱油这三种角色场景。"/>
+    <link rel="stylesheet" type="text/css" href="./build/style.css">
     <meta name="viewport" content="width=640, user-scalable=no"/>
-    <script type="text/javascript" src="../lib/jquery-1.11.2.min.js"></script>
-    <script data-main="js/main" src="../lib/require.js"></script>
 </head>
-<body>
-    <div class="start-mask">
-        <h2 class="title">定制版2048游戏</h2>
-        <p>开始游戏，请选择合适的角色</p>
-        <button class="start-btn" id="js-it">IT民工</button>
-        <button class="start-btn" id="js-arch">建筑师</button>
-        <button class="start-btn" id="js-2048">打酱油</button>
-    </div>
-    <div class="header">
-        <h2 class="title">迎娶白富美游戏</h2>
-        <div class="pull-right">
-            <div class="score-count">
-                <div class="score">
-                    得分<span class="score-num">12332222</span>
-                </div>
-                <!-- <div class="score">
-                    最高<span class="score-num">12132</span>
-                </div> -->
-            </div>
-            <button class="start-btn">开始游戏</button>
-        </div>
-    </div>
-    <div class="main-body">
-        <ul>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-            <li class="grid-cell"></li>
-        </ul>
-        <div class="mask">
-            <h2 class="title">游戏结束</h2>
-            <button class="start-btn">重新开始</button>
-        </div>
-    </div>
-    <div class="love-block">
-        <div class="text-block">
-            <p class="title">娜娜，你好啊。</p>
-            <p class="text-body">时间过得真快啊，转眼咱们在一起两周年了。</p>
-        </div>
-        <div class="text-block2">
-            <p>过去两年里，我们经历了许许多多的事情，</br>彼此更加了解对方，感情越来越牢固啦。</br>在工作方面，谢谢你的支持和理解，</br>让我有业余时间折腾技术。</br>花了点小心思，</br>希望你开心！</br>爱你！</p>
-        </div>
-        <div class="text-block3">
-            <p>爱你的超强</br>2015-01-25</p>
-        </div>
-        <div class="continue-btn">
-            <button>继续游戏</button>
-        </div>
-        <div id="love-block"></div>
-        <div class="audio-btn music-off">
-            <audio src='lib/assets/meet.mp3' type='audio/mpeg' preload='auto' loop></audio>
-        </div>
-    </div>
-    <script type="text/javascript" src="../js/support.js"></script>
-    <script type="text/javascript" src="../js/animation.js"></script>
-    <script type="text/javascript" src="../js/lover.js"></script>
+<body id="app-wrap">
+<div id="start-mask"></div>
+<div id="header"></div>
+<div id="main"></div>
+<script src="http://localhost:80/webpack-dev-server.js"></script>
+<script type="text/javascript" src="./build/vender.js"></script>
+<script type="text/javascript" src="./build/bundle-app.js"></script>
 </body>
 </html>

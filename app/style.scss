@@ -1,340 +1,106 @@
-@import "lib/normalize";
-@import "lib/placeholder";
+@import "./lib/normalize";
+@import "./lib/placeholder";
+@import "./module/game_Over/gameOver";
+@import "./module/header/header";
+@import "./module/main/main";
+@import "./module/grid/grid";
+@import "./module/start/start";
 
-html{-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
-body{
-    width: 640px;
-    margin: 0 auto;
-}
-.start-mask{
-    // display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(238, 228, 218, .95);
-    text-align: center;
-    z-index: 1000;
-    .title{
-        margin-top: 200px;
-        margin-bottom: 100px;
-        font-size: 80px;
-        color: #776e65;
-    }
-    p{
-        font-size: 40px;
-        color: #71675D;
-    }
+html { -webkit-tap-highlight-color : rgba(0, 0, 0, 0); }
 
-    .start-btn{
-        height: 100px;
-        line-height: 100px;
-        vertical-align: middle;
-        padding: 0 36px;
-        margin: 40px 10px;
-        border: none;
-        border-radius: 6px;
-        background-color: #8f7a66;
-        color: #f9f6f2;
-        font-size: 30px;
-        outline: none;
-    }
-}
-.header{
-    width: 600px;
-    padding: 0 20px;
-    margin: 0 auto;
-    @extend %clearfix;
-    .title{
-        float: left;
-        font-size: 50px;
-        font-weight: bold;
-        color: #776e65;
-        margin-top: 40px;
-    }
-    .pull-right{
-        float: right;
-        margin-top: 20px;
-        text-align: right;
-    }
-    .score-count{
-        .score{
-            display: inline-block;
-            width: 200px;
-            height:80px;
-            padding: 10px 0;
-            font-size: 30px;
-            color: #eee4da;
-            background-color: #bbada0;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .score-num{
-            display: block;
-            color: #f9f6f2;
-            font-size: 40px;
-        }
-    }
-    .start-btn{
-        width: 200px;
-        height: 100px;
-        line-height: 100px;
-        vertical-align: middle;
-        padding: 0 36px;
-        margin: 20px 0;
-        border: none;
-        border-radius: 6px;
-        background-color: #8f7a66;
-        color: #f9f6f2;
-        font-size: 30px;
-        outline: none;
-
-    }
-}
-.main-body{
-    position: relative;
-    width: 576px;
-    padding: 16px;
-    margin: 0 16px;
-    background-color: #bbada0;
-    ul{
-       @extend %clearfix;
-       // height: 456px;
-   }
-   .grid-cell{
-    float: left;
-    width: 134px;
-    height: 134px;
-    margin: 5px;
-    background-color: rgba(238, 228, 218, 0.35);
-    font-family: Arial;
-    color: white;
-    border-radius: 4px;
-}
-.block{
-    display: none;
-    position: absolute;
-    width: 134px;
-    height: 134px;
-    margin: 5px;
-    background-color: rgba(238, 228, 218, 0.35);
-    font-family: Arial;
-    color: #f9f6f2;
-    border-radius: 4px;
-    font-size: 36px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 140px;
-}
-.block-2{
-    color: #776e65;
-    font-size: 32px;
-    background-color: #eee4da;
-}
-.block-4{
-    color: #776e65;
-    background-color: #ede0c8;
-}
-.block-8{
-    font-size: 32px;
-    background-color: #f2b179;
-}
-.block-16{
-    background-color: #f59563;
-}
-.block-32{
-    font-size: 32px;
-    background-color: #f67c5f;
-}
-.block-64{
-    background-color: #f65e3b;
-}
-.block-128{
-    font-size: 32px;
-    background-color: #edcf72;
-}
-.block-256{
-    font-size: 32px;
-    background-color: #edcc61;
-}
-.block-512{
-        // font-size: 45px;
-        background-color: #edc850;
-    }
-    .block-1024{
-        // font-size: 40px;
-        background-color: #edc53f;
-    }
-    .block-2048{
-        // font-size: 40px;
-        background-color: #edc22e;
-    }
-    .mask{
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: rgba(238, 228, 218, .7);
-        text-align: center;
-        .title{
-            margin-top: 200px;
-            margin-bottom: 0;
-            font-size: 120px;
-            color: #776e65;
-        }
-        .start-btn{
-            height: 100px;
-            line-height: 100px;
-            vertical-align: middle;
-            padding: 0 36px;
-            margin: 40px 0;
-            border: none;
-            border-radius: 6px;
-            background-color: #8f7a66;
-            color: #f9f6f2;
-            font-size: 30px;
-            outline: none;
-        }
-    }
+body {
+  width  : 640px;
+  margin : 0 auto;
 }
 
-.love-block{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(238, 228, 218, 1);
-    .text-block{
-        position: absolute;
-        top: 20px;
-        height: 100px;
-        font-size: 30px;
-        color: #37618B;
-        margin-left: 20px;
-    }
-    .text-block2{
-        display: none;
-        position: absolute;
-        top: 200px;
-        height: 100px;
-        margin-left: 20px;
-        font-size: 30px;
-        color: #37618B;
-        line-height: 50px;
-    }
-    .text-block3{
-        display: none;
-        position: absolute;
-        width: 180px;
-        bottom: 160px;
-        right: 50px;
-        height: 100px;
-        font-size: 30px;
-        color: #37618B;
-        line-height: 50px;
-    }
-    .continue-btn{
-        display: none;
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-size: 30px;
-        z-index: 100;
-        button{
-            height: 80px;
-            line-height: 80px;
-            vertical-align: middle;
-            padding: 0 30px;
-            // margin: 40px 0;
-            border: none;
-            border-radius: 6px;
-            background-color: #8f7a66;
-            color: #f9f6f2;
-            font-size: 30px;
-            outline: none;
-        }
-    }
-    .audio-btn{
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        height: 50px;
-        width: 50px;
-        background-size: 50px auto;
-    }
-    .music-on{
-        background-image: url(lib/assets/music.png);
-    }
-    .music-off{
-        // background: url(../2048/img/music.png) no-repeat;
-        background-image: url(lib/assets/music.png);
-        opacity: 0.5;
-    }
+a {
+  text-decoration : none;
 }
-#love-block{
-    margin-top: 120px;
-    width: 640px;
-    height: 800px;
+
+.love-block {
+  display          : none;
+  position         : absolute;
+  top              : 0;
+  left             : 0;
+  bottom           : 0;
+  right            : 0;
+  background-color : rgba(238, 228, 218, 1);
+  .text-block {
+    position    : absolute;
+    top         : 20px;
+    height      : 100px;
+    font-size   : 30px;
+    color       : #37618B;
+    margin-left : 20px;
+  }
+  .text-block2 {
+    display     : none;
+    position    : absolute;
+    top         : 200px;
+    height      : 100px;
+    margin-left : 20px;
+    font-size   : 30px;
+    color       : #37618B;
+    line-height : 50px;
+  }
+  .text-block3 {
+    display     : none;
+    position    : absolute;
+    width       : 180px;
+    bottom      : 160px;
+    right       : 50px;
+    height      : 100px;
+    font-size   : 30px;
+    color       : #37618B;
+    line-height : 50px;
+  }
+  .continue-btn {
+    display    : none;
+    position   : absolute;
+    bottom     : 20px;
+    left       : 0;
+    right      : 0;
+    text-align : center;
+    font-size  : 30px;
+    z-index    : 100;
+    button {
+      height           : 80px;
+      line-height      : 80px;
+      vertical-align   : middle;
+      padding          : 0 30px;
+      // margin: 40px 0;
+      border           : none;
+      border-radius    : 6px;
+      background-color : #8f7a66;
+      color            : #f9f6f2;
+      font-size        : 30px;
+      outline          : none;
+    }
+  }
+  .audio-btn {
+    position        : absolute;
+    top             : 20px;
+    right           : 20px;
+    height          : 50px;
+    width           : 50px;
+    background-size : 50px auto;
+  }
+  .music-on {
+    background-image : url(lib/assets/music.png);
+  }
+  .music-off {
+    // background: url(../2048/img/music.png) no-repeat;
+    background-image : url(lib/assets/music.png);
+    opacity          : 0.5;
+  }
+}
+
+#love-block {
+  margin-top : 120px;
+  width      : 640px;
+  height     : 800px;
 }
 
 
-
-
-.animation-show{
-    animation: animationShow .1s ease backwards;
-    -webkit-animation: animationShow .1s ease;
-}
-.animation-bump{
-    animation: animationBump .15s ease-out;
-    -webkit-animation: animationBump .15s ease-out;
-}
-@-webkit-keyframes animationShow{
-    0%{
-        opacity: 0;
-        transform: scale(0);
-        -webkit-transform: scale(0);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1);
-        -webkit-transform: scale(1);
-
-    }
-
-}
-@keyframes animationShow{
-    0%{
-        opacity: 0;
-        transform: scale(0);
-        -webkit-transform: scale(0);
-    }
-    100%{
-        opacity: 1;
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
-
-}
-@-webkit-keyframes animationBump{
-    0%{
-        transform: scale(0);
-        -webkit-transform: scale(0);
-    }
-    35%{
-        transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-    }
-    100%{
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
-}
 
 

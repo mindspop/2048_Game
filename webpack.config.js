@@ -6,23 +6,31 @@ var path = require('path');
 var webpack = require('webpack');
 
 var config = {
-	entry  : {
-		app   : ['webpack/hot/dev-server', path.resolve(__dirname, './app/app.js')],
-		vender: ['jquery,'backbone','underscore']
+	entry: {
+		app: [
+			'webpack/hot/dev-server',
+			path.resolve(__dirname, './app/app.js')
+		],
+
+		vender: [
+			'jquery',
+			'backbone',
+			'underscore'
+		]
 	},
-	output : {
+
+	output: {
 		path      : path.resolve(__dirname, 'app/build'),
 		filename  : 'bundle-[name].js',
 		publicPath: 'assets'
 	},
-	module : {
+
+	module: {
 		loaders: [
-			{
-				test  : /\.ejs$/,
-				loader: 'ejs-loader'
-			}
+			{test: /\.ejs$/, loader: 'ejs-loader'}
 		]
 	},
+
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin('vender', 'vender.js'),
 		new webpack.HotModuleReplacementPlugin(),

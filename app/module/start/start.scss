@@ -1,0 +1,37 @@
+@import "../../lib/placeholder";
+
+.start-mask {
+  position         : fixed;
+  top              : 0;
+  left             : 0;
+  bottom           : 0;
+  right            : 0;
+  background-color : rgba(238, 228, 218, .95);
+  text-align       : center;
+  z-index          : 1000;
+  .title {
+    margin-top    : 200px;
+    margin-bottom : 100px;
+    font-size     : 80px;
+    color         : #776e65;
+  }
+  p {
+    font-size : 40px;
+    color     : #71675D;
+  }
+
+  .start-btn {
+    display          : inline-block;
+    height           : 100px;
+    line-height      : 100px;
+    vertical-align   : middle;
+    padding          : 0 36px;
+    margin           : 40px 10px;
+    border           : none;
+    border-radius    : 6px;
+    background-color : #8f7a66;
+    color            : #f9f6f2;
+    font-size        : 30px;
+    outline          : none;
+  }
+}

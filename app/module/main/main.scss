@@ -1,0 +1,13 @@
+@import "../../lib/placeholder";
+
+.main {
+  position         : relative;
+  width            : 576px;
+  padding          : 16px;
+  margin           : 0 16px;
+  background-color : #bbada0;
+  ul {
+    @extend %clearfix;
+    // height: 456px;
+  }
+}
